@@ -7,6 +7,11 @@ import Link from './link.js'
  * @param {import('../schema.d.ts').ResumeSchema['publications']} publications
  * @returns {string | false}
  */
+// I would prefer to use markdown() for the author field, but editor
+// says: "arg of type {} not assignable to param of type string"
+// I don't understand why the summary field (below) which is also string
+// does not produce the same warning by the editor.
+// In any case, rendering works fine, we can just disregard the linters warning.
 export default function Publications(publications = []) {
   return (
     publications.length > 0 &&
@@ -15,13 +20,14 @@ export default function Publications(publications = []) {
         <h3>Publications</h3>
         <div class="stack">
           ${publications.map(
-            ({ name, publisher, releaseDate, summary, url }) => html`
+            ({ name, author, publisher, releaseDate, summary, url }) => html`
               <article>
                 <header>
-                  <h4>${Link(url, name)}</h4>
+                  <h5><strong>${Link(url, name)}</strong></h5>
                   <div class="meta">
-                    ${publisher && html`<div>Published by <strong>${publisher}</strong></div>`}
-                    ${releaseDate && Date(releaseDate)}
+                  <div>${author && markdown(author)}</div>
+                  ${releaseDate && Date(releaseDate)}
+                  ${publisher && html`, in ${publisher}`}
                   </div>
                 </header>
                 ${summary && markdown(summary)}
