@@ -27,6 +27,46 @@ npm install jsonresume-theme-even
 
 ## Usage
 
+### Publish this theme for local testing
+
+```
+npm pack
+```
+
+This creates a zipped tarball (`*.tgz`) containing the expected file structure:
+
+```
+jsonresume-theme-even/
+├── bin
+│   └── cli.js
+├── dist
+│   ├── index.cjs
+│   ├── index.d.ts
+│   ├── index.d.ts.map
+│   ├── index.js
+│   ├── index.umd.cjs
+│   └── schema.d.ts
+├── LICENSE
+├── package.json
+└── README.md
+```
+
+This archive can then be inflated and put into place:
+
+```
+mkdir -p /media/bay/taha/sites/cv/node_modules/jsonresume-theme-even && tar xf jsonresume-theme-even-0.23.0.tgz -C /media/bay/taha/sites/cv/node_modules/jsonresume-theme-even --strip-components 1
+```
+
+**Actually, the above is not enough** (edits are not picked up in the generated files)!
+
+```
+npm run build # creates ./dist/ and ./bin/ directories
+cp -a bin dist /media/bay/taha/sites/cv/node_modules/jsonresume-theme-even/
+```
+
+- https://medium.com/@debshish.pal/publish-a-npm-package-locally-for-testing-9a00015eb9fd
+- https://unix.stackexchange.com/questions/11018/how-to-choose-directory-name-during-untarring
+
 ### With resume-cli
 
 [resume-cli](https://github.com/jsonresume/resume-cli) comes with _Even_ and uses it by default, so you don't even (pun intended) need to install the theme yourself:

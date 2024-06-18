@@ -17,10 +17,12 @@ const formatCountry = countryCode =>
 export default function Header(basics = {}) {
   const { email, image, label, location, name, phone, profiles = [], summary, url } = basics
 
+  // note, h3 comes with style settings that shift it horizontally and thus looks bad if used here
+  // and h4 is too bold, so h5 it is
   return html`
     <header class="masthead">
       ${image && html`<img src="${image}" alt="" />`}
-      <div>${name && html`<h1>${name}</h1>`} ${label && html`<h2>${label}</h2>`}</div>
+      <div>${name && html`<h1>${name}</h1>`} ${label && html`<h5>${label}</h5>`}</div>
       ${summary && html`<article>${markdown(summary)}</article>`}
       <ul class="icon-list">
         ${location?.city &&
