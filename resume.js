@@ -27,6 +27,7 @@ export default function Resume(resume, css) {
         ${Meta(resume.basics)}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
+        <link rel="stylesheet" href="assets/academicons/css/academicons.min.css" />
         <style>
           ${css}
         </style>

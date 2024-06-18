@@ -20,10 +20,10 @@ export default function Publications(publications = []) {
         <h3>Publications</h3>
         <div class="stack">
           ${publications.map(
-            ({ name, author, publisher, releaseDate, summary, url }) => html`
+            ({ name, author, doi, publisher, releaseDate, summary, url }) => html`
               <article>
                 <header>
-                  <h5><strong>${Link(url, name)}</strong></h5>
+                  <h5><strong>${Link(url, name)}</strong>${doi && html`<a href=https://doi.org/${doi}>&nbsp;<i class="ai ai-doi ai-1.2x"></i></a>`}</h5>
                   <div class="meta">
                   <div>${author && markdown(author)}</div>
                   ${releaseDate && Date(releaseDate)}
