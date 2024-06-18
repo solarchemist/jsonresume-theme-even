@@ -7,6 +7,7 @@ import Languages from './components/languages.js'
 import Meta from './components/meta.js'
 import Projects from './components/projects.js'
 import Publications from './components/publications.js'
+import Teaching from './components/teaching.js'
 import References from './components/references.js'
 import Skills from './components/skills.js'
 import Volunteer from './components/volunteer.js'
@@ -38,6 +39,7 @@ export default function Resume(resume, css) {
         ${Publications(resume.publications)}
         ${Education(resume.education)}
         ${Projects(resume.projects)}
+        ${Teaching(resume.teaching)}
         ${Awards(resume.awards)}
         ${Certificates(resume.certificates)}
         ${Volunteer(resume.volunteer)}
