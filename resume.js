@@ -36,14 +36,14 @@ export default function Resume(resume, css) {
       <body>
         ${Header(resume.basics)}
         ${Work(resume.work)}
-        ${Publications(resume.publications)}
         ${Education(resume.education)}
+        ${Publications(resume.publications)}
         ${Projects(resume.projects)}
         ${Teaching(resume.teaching)}
         ${Awards(resume.awards)}
         ${Certificates(resume.certificates)}
-        ${Volunteer(resume.volunteer)}
         ${Skills(resume.skills)}
+        ${Volunteer(resume.volunteer)}
         ${Languages(resume.languages)}
         ${Interests(resume.interests)}
         ${References(resume.references)}
