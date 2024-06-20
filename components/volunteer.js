@@ -7,6 +7,10 @@ import Link from './link.js'
  * @param {import('../schema.d.ts').ResumeSchema['volunteer']} volunteer
  * @returns {string | false}
  */
+// I would prefer if display of multiple dates (multiDates) would use the month-Year notation
+// (as employed by formatDate() and Duration(), but without writing out a duration if
+// start and end date are the same - this would be rather neat, as it would allow multiDates
+// to be an array of date ranges without additional logic)
 export default function Volunteer(volunteer = []) {
   return (
     volunteer.length > 0 &&
@@ -15,13 +19,19 @@ export default function Volunteer(volunteer = []) {
         <h3>Volunteer</h3>
         <div class="stack">
           ${volunteer.map(
-            ({ highlights = [], organization, position, startDate, endDate, summary, url }) => html`
+            ({ highlights = [], organization, position, startDate, endDate, multiDates = [], summary, url }) => html`
               <article>
                 <header>
                   <h4>${Link(url, organization)}</h4>
                   <div class="meta">
                     <strong>${position}</strong>
                     ${startDate && html`<div>${Duration(startDate, endDate)}</div>`}
+                    ${multiDates.length > 0 &&
+                    html`
+                      <ul class="date-list">
+                      ${multiDates.reverse().map(multiDates => html`<li>${multiDates}</li>`)}
+                      </ul>
+                    `}
                   </div>
                 </header>
                 ${summary && markdown(summary)}

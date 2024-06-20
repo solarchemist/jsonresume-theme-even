@@ -225,6 +225,40 @@ blockquote > * + *,
   padding: 0.2em 0.6em;
 }
 
+/* https://stackoverflow.com/questions/976897/how-to-style-the-ul-list-to-a-single-line */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
+.date-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* list-style none removes the bullets */
+  list-style: none;
+  /* kill padding-left 1em which is otherwise inherited from ol, ul styling */
+  padding: 0;
+}
+
+/* margin-top must be zeroed out, otherwise the first item in the list inherits
+  from :not(.icon-list, .tag-list) > li + li (for some reason I cannot understand) */
+.date-list > li + li {
+  margin-top: 0;
+}
+
+/* https://notes.kargware.com/2021/01/16/Css-Unordered-List-In-One-Line */
+.date-list > li:not(:only-child)::after {
+  /* note, regular space character has no effect, needs unicode character */
+  /* and for some reason \0020 (regular space) has no effect, needs non-breakable space */
+  /* https://stackoverflow.com/questions/5467605/add-a-space-after-an-element-using-after */
+  content: ",\00a0";
+}
+
+.date-list > li:last-child::before {
+  /* in this case normal space char actually works, not sure why */
+  content: "and ";
+}
+
+.date-list > li:last-child::after {
+  content: "";
+}
+
 .timeline > div {
   position: relative;
 }
