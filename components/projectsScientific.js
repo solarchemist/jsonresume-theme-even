@@ -10,17 +10,17 @@ import Link from './link.js'
 const formatRoles = roles => (Intl.ListFormat ? new Intl.ListFormat('en').format(roles) : roles.join(', '))
 
 /**
- * @param {import('../schema.d.ts').ResumeSchema['projects']} projects
+ * @param {import('../schema.d.ts').ResumeSchema['projectsScientific']} projectsScientific
  * @returns {string | false}
  */
-export default function Projects(projects = []) {
+export default function ProjectsScientific(projectsScientific = []) {
   return (
-    projects.length > 0 &&
+    projectsScientific.length > 0 &&
     html`
-      <section id="projects">
-        <h3>Projects</h3>
+      <section id="projectsScientific">
+        <h3>Scientific contributions</h3>
         <div class="stack">
-          ${projects.map(
+          ${projectsScientific.map(
             ({
               description,
               entity,
@@ -36,7 +36,7 @@ export default function Projects(projects = []) {
             }) => html`
               <article>
                 <header>
-                  <h4>${Link(url, name)}${doi && html`<a href=https://doi.org/${doi}>&nbsp;<i class="ai ai-doi ai-1.2x"></i></a>`}</h4>
+                  <h5><strong>${Link(url, name)}</strong>${doi && html`<a href=https://doi.org/${doi}>&nbsp;<i class="ai ai-doi ai-1.2x"></i></a>`}</h5>
                   <div class="meta">
                     <div>
                       ${roles.length > 0 && html`<strong>${formatRoles(roles)}</strong>`}

@@ -5,9 +5,10 @@ import Header from './components/header.js'
 import Interests from './components/interests.js'
 import Languages from './components/languages.js'
 import Meta from './components/meta.js'
-import Projects from './components/projects.js'
+import ProjectsScientific from './components/projectsScientific.js'
 import Publications from './components/publications.js'
 import Teaching from './components/teaching.js'
+import Projects from './components/projects.js'
 import References from './components/references.js'
 import Skills from './components/skills.js'
 import Volunteer from './components/volunteer.js'
@@ -38,8 +39,9 @@ export default function Resume(resume, css) {
         ${Work(resume.work)}
         ${Education(resume.education)}
         ${Publications(resume.publications)}
-        ${Projects(resume.projects)}
+        ${ProjectsScientific(resume.projectsScientific)}
         ${Teaching(resume.teaching)}
+        ${Projects(resume.projects)}
         ${Awards(resume.awards)}
         ${Certificates(resume.certificates)}
         ${Skills(resume.skills)}

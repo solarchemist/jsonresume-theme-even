@@ -64,6 +64,11 @@ npm run build # creates ./dist/ and ./bin/ directories
 cp -a bin dist /media/bay/taha/sites/cv/node_modules/jsonresume-theme-even/
 ```
 
+To regenerate the `schema.d.ts` file, this works:
+```
+npx json-schema-to-typescript /path/to/jsonresume-schema/schema.json > schema.d.ts
+```
+
 + https://medium.com/@debshish.pal/publish-a-npm-package-locally-for-testing-9a00015eb9fd
 + https://unix.stackexchange.com/questions/11018/how-to-choose-directory-name-during-untarring
 

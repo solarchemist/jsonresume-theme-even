@@ -17,7 +17,7 @@ export default function Publications(publications = []) {
     publications.length > 0 &&
     html`
       <section id="publications">
-        <h3>Publications</h3>
+        <h3>Scientific publications</h3>
         <div class="stack">
           ${publications.map(
             ({ name, author, doi, publisher, releaseDate, summary, url }) => html`
