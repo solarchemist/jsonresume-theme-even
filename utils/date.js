@@ -1,4 +1,4 @@
-import html from '../utils/html.js'
+import html from './html.js'
 
 /**
  * @param {string} dateString
@@ -15,6 +15,6 @@ const formatDate = dateString =>
  * @param {string} date
  * @returns {string}
  */
-export default function Duration(date) {
+export default function DateHTML(date) {
   return html`<time datetime="${date}">${formatDate(date)}</time>`
 }

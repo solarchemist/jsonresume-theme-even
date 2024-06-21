@@ -1,6 +1,6 @@
 import html from '../utils/html.js'
 import markdown from '../utils/markdown.js'
-import Duration from './duration.js'
+import Duration from '../utils/duration.js'
 import Link from './link.js'
 
 /** @typedef {NonNullable<import('../schema.d.ts').ResumeSchema['work']>[number]} Work */

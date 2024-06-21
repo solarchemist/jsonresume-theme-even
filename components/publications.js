@@ -1,6 +1,6 @@
 import html from '../utils/html.js'
 import markdown from '../utils/markdown.js'
-import Date from './date.js'
+import DateHTML from '../utils/date.js'
 import Link from './link.js'
 
 /**
@@ -26,7 +26,7 @@ export default function Publications(publications = []) {
                   <h5><strong>${Link(url, name)}</strong>${doi && html`<a href=https://doi.org/${doi}>&nbsp;<i class="ai ai-doi ai-1.2x"></i></a>`}</h5>
                   <div class="meta">
                   <div>${author && markdown(author)}</div>
-                  ${releaseDate && Date(releaseDate)}
+                  ${releaseDate && DateHTML(releaseDate)}
                   ${publisher && html`, in ${publisher}`}
                   </div>
                 </header>

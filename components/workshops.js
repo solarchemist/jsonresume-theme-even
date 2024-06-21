@@ -1,6 +1,6 @@
 import html from '../utils/html.js'
 import markdown from '../utils/markdown.js'
-import Duration from '../utils/duration.js'
+import DurationWithDay from '../utils/durationDay.js'
 import Link from './link.js'
 
 /**
@@ -10,42 +10,40 @@ import Link from './link.js'
 const formatRoles = roles => (Intl.ListFormat ? new Intl.ListFormat('en').format(roles) : roles.join(', '))
 
 /**
- * @param {import('../schema.d.ts').ResumeSchema['projects']} projects
+ * @param {import('../schema.d.ts').ResumeSchema['workshops']} workshops
  * @returns {string | false}
  */
-export default function Projects(projects = []) {
+export default function Workshops(workshops = []) {
   return (
-    projects.length > 0 &&
+    workshops.length > 0 &&
     html`
-      <section id="projects">
-        <h3>Projects</h3>
+      <section id="workshops">
+        <h3>Workshops & conferences</h3>
         <div class="stack">
-          ${projects.map(
+          ${workshops.map(
             ({
-              description,
-              entity,
+              summary,
               highlights = [],
               keywords = [],
               name,
+              location,
               startDate,
               endDate,
-              roles = [],
-              type,
-              doi,
+              contributions = [],
               url,
             }) => html`
               <article>
                 <header>
-                  <h4>${Link(url, name)}${doi && html`<a href=https://doi.org/${doi}>&nbsp;<i class="ai ai-doi ai-1.2x"></i></a>`}</h4>
+                  <h4>${Link(url, name)}</h4>
                   <div class="meta">
                     <div>
-                      ${roles.length > 0 && html`<strong>${formatRoles(roles)}</strong>`}
-                      ${entity && html`at <strong>${entity}</strong>`}
+                      ${contributions.length > 0 && html`<strong>${formatRoles(contributions)}</strong>`}
                     </div>
-                    ${startDate && html`<div>${Duration(startDate, endDate)}</div>`} ${type && html`<div>${type}</div>`}
+                    ${startDate && html`<div>${DurationWithDay(startDate, endDate)}</div>`}
+                    ${location && html`<div>${location}</div>`}
                   </div>
                 </header>
-                ${description && markdown(description)}
+                ${summary && markdown(summary)}
                 ${highlights.length > 0 &&
                 html`
                   <ul>

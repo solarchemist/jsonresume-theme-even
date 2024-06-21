@@ -13,6 +13,7 @@ import References from './components/references.js'
 import Skills from './components/skills.js'
 import Volunteer from './components/volunteer.js'
 import Work from './components/work.js'
+import Workshops from './components/workshops.js'
 import colors from './utils/colors.js'
 import html from './utils/html.js'
 
@@ -42,6 +43,7 @@ export default function Resume(resume, css) {
         ${ProjectsScientific(resume.projectsScientific)}
         ${Teaching(resume.teaching)}
         ${Projects(resume.projects)}
+        ${Workshops(resume.workshops)}
         ${Awards(resume.awards)}
         ${Certificates(resume.certificates)}
         ${Skills(resume.skills)}
