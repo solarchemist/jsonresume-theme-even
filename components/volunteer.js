@@ -11,6 +11,9 @@ import Link from './link.js'
 // (as employed by formatDate() and Duration(), but without writing out a duration if
 // start and end date are the same - this would be rather neat, as it would allow multiDates
 // to be an array of date ranges without additional logic)
+// Also, rather than simply reversing the list of multiDates, a better solution
+// would be to actually sort multiDates (into reverse chronological order) to allow
+// the user to enter dates without any order
 export default function Volunteer(volunteer = []) {
   return (
     volunteer.length > 0 &&
