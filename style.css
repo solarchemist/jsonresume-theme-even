@@ -322,3 +322,24 @@ blockquote > * + *,
     grid-template-columns: repeat(auto-fit, minmax(calc((100% - 1em) / 2), 1fr));
   }
 }
+
+/* https://stackoverflow.com/questions/27475542/correcting-sup-sub-line-height */
+/* https://stackoverflow.com/questions/1530685/how-can-i-keep-consistent-line-height-with-superscript-elements */
+/* https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height */
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  /* this value controls how far the superscript is shifted (make it larger to vertically shift more) */
+  top: -0.3em;
+}
+
+sub {
+  /* this value controls how far the subscript is shifted (make it larger to vertically shift more) */
+  top: 0.3em;
+}
+
+/* make the DOI button not occupy any vertical space (despite it abutting into the line above/below) */
+/* this ensures line separation is not affected even if you increase the button size using "ai-ix" */
+.ai-doi {
+  line-height: 0;
+}
