@@ -35,7 +35,7 @@ export default function Header(basics = {}) {
         html`
           <li>
             ${Icon('mail')}
-            <a href="mailto:${email}">${email}</a>
+            ${email}
           </li>
         `}
         ${phone &&

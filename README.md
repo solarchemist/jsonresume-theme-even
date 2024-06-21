@@ -64,7 +64,7 @@ npm run build # creates ./dist/ and ./bin/ directories
 cp -a bin dist /media/bay/taha/sites/cv/node_modules/jsonresume-theme-even/
 ```
 
-To regenerate the `schema.d.ts` file, this works:
+To regenerate the `schema.d.ts` file, this works (this is actually important if schema has changed):
 ```
 npx json-schema-to-typescript /path/to/jsonresume-schema/schema.json > schema.d.ts
 ```
