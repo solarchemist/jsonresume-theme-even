@@ -185,7 +185,9 @@ section {
 article > * + *,
 blockquote > * + *,
 .timeline > div > * + * {
-  margin-top: 0.6em;
+  /* 0.6em makes too much vertical space between "description" and "position" lines
+  for Work entries */
+  margin-top: 0.1em;
 }
 
 .meta {

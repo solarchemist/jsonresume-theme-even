@@ -1,4 +1,5 @@
 import html from '../utils/html.js'
+import markdown from '../utils/markdown.js'
 
 /**
  * @param {import('../schema.d.ts').ResumeSchema['skills']} skills
@@ -14,11 +15,11 @@ export default function Skills(skills = []) {
           ${skills.map(
             ({ keywords = [], name }) => html`
               <div>
-                ${name && html`<h4>${name}</h4>`}
+                ${name && html`<h5><strong>${name}</strong></h5>`}
                 ${keywords.length > 0 &&
                 html`
                   <ul class="tag-list">
-                    ${keywords.map(keyword => html`<li>${keyword}</li>`)}
+                    ${keywords.map(keyword => html`<li>${markdown(keyword)}</li>`)}
                   </ul>
                 `}
               </div>

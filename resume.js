@@ -37,17 +37,17 @@ export default function Resume(resume, css) {
       </head>
       <body>
         ${Header(resume.basics)}
-        ${Work(resume.work)}
-        ${Education(resume.education)}
         ${Publications(resume.publications)}
         ${ProjectsScientific(resume.projectsScientific)}
-        ${Teaching(resume.teaching)}
         ${Projects(resume.projects)}
+        ${Skills(resume.skills)}
         ${Workshops(resume.workshops)}
+        ${Work(resume.work)}
+        ${Teaching(resume.teaching)}
+        ${Education(resume.education)}
+        ${Volunteer(resume.volunteer)}
         ${Awards(resume.awards)}
         ${Certificates(resume.certificates)}
-        ${Skills(resume.skills)}
-        ${Volunteer(resume.volunteer)}
         ${Languages(resume.languages)}
         ${Interests(resume.interests)}
         ${References(resume.references)}

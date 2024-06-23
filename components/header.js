@@ -22,7 +22,7 @@ export default function Header(basics = {}) {
   return html`
     <header class="masthead">
       ${image && html`<img src="${image}" alt="" />`}
-      <div>${name && html`<h1>${name}</h1>`} ${label && html`<h5>${label}</h5>`}</div>
+      <div>${name && html`<h1>${name}</h1>`} ${label && html`<h5>${markdown(label)}</h5>`}</div>
       ${summary && html`<article>${markdown(summary)}</article>`}
       <ul class="icon-list">
         ${location?.city &&
