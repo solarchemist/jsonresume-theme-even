@@ -55,7 +55,7 @@ export default function Projects(projects = []) {
                 ${keywords.length > 0 &&
                 html`
                   <ul class="tag-list">
-                    ${keywords.map(keyword => html`<li>${keyword}</li>`)}
+                    ${keywords.map(keyword => html`<li>${markdown(keyword)}</li>`)}
                   </ul>
                 `}
               </article>

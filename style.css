@@ -182,6 +182,20 @@ section {
   max-width: 12em;
 }
 
+.footer {
+  background: var(--color-secondary-dark);
+  /* this makes the background colour extend all the way to the bottom edge of the page */
+  /* https://stackoverflow.com/a/18935218/1198249 */
+  box-shadow: 0 50vh 0 50vh var(--color-secondary-dark);
+  /* full is needed to extend all the way from left edge to right edge */
+  grid-column: full;
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 article > * + *,
 blockquote > * + *,
 .timeline > div > * + * {

@@ -51,6 +51,16 @@ export default function Resume(resume, css) {
         ${Languages(resume.languages)}
         ${Interests(resume.interests)}
         ${References(resume.references)}
+        <footer class="footer">
+          <p>
+          I made this CV with a
+          <a href="https://github.com/solarchemist/jsonresume-schema">schema</a> and
+          a <a href="https://github.com/solarchemist/jsonresume-theme-even">theme</a>
+          adapted from<br/>
+          <a href="https://github.com/jsonresume/resume-schema">resume-schema</a>
+          and <a href="https://github.com/rbardini/jsonresume-theme-even">jsonresume-theme-even</a>.
+          </p>
+        </footer>
       </body>
     </html>`
 }
