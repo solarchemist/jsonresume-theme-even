@@ -183,10 +183,10 @@ section {
 }
 
 .footer {
-  background: var(--color-secondary-dark);
+  background: var(--color-dimmed);
   /* this makes the background colour extend all the way to the bottom edge of the page */
   /* https://stackoverflow.com/a/18935218/1198249 */
-  box-shadow: 0 50vh 0 50vh var(--color-secondary-dark);
+  box-shadow: 0 50vh 0 50vh var(--color-dimmed);
   /* full is needed to extend all the way from left edge to right edge */
   grid-column: full;
   text-align: center;
@@ -194,6 +194,10 @@ section {
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
+}
+
+.githash {
+  color: var(--color-dimmed);
 }
 
 article > * + *,
